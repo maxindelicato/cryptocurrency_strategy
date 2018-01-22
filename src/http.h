@@ -28,7 +28,7 @@ std::tuple<int, json> get_poloniex_ticker(const std::string currency_pair) {
         auto const host = "poloniex.com";
         auto const port = "443";
         auto const target = "/public?command=returnTicker";
-        int version = 11;
+        auto version = 11;
 
         // The io_context is required for all I/O
         boost::asio::io_context ioc;
@@ -91,7 +91,6 @@ std::tuple<int, json> get_poloniex_ticker(const std::string currency_pair) {
             throw boost::system::system_error{ec};
 
         // If we get here then the connection is closed gracefully
-//        std::cout << "result: " << std::string(res.body().data().begin(), res.body().data().end(), ) << std::endl;
         return std::make_tuple(1, json::parse(boost::beast::buffers_to_string(res.body().data()))["BTC_ETH"]);
     }
     catch(std::exception const& e)

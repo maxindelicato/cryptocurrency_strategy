@@ -40,6 +40,7 @@ void tick(const boost::system::error_code& sec, boost::asio::deadline_timer& tim
 
     ++count;
 
+    // TODO: Add a retry mechanism based on returned error code
     auto[ec, js] = cs::get_poloniex_ticker("BTC_ETH");
 
     std::cout << "last: " << lexical_cast<double>(js["last"].get<std::string>()) << std::endl;
@@ -57,7 +58,7 @@ void tick(const boost::system::error_code& sec, boost::asio::deadline_timer& tim
 }
 
 int main() {
-    int count = 0;
+    auto count = 0;
     xt::xtensor<double, 1> last_data;
     boost::asio::io_service ios;
     boost::asio::deadline_timer timer(ios, boost::posix_time::seconds(deadline_timer_interval));

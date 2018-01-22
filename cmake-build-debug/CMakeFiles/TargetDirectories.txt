@@ -1,3 +1,0 @@
-/home/max/src/cpp/cryptocurrency_strategy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/max/src/cpp/cryptocurrency_strategy/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/max/src/cpp/cryptocurrency_strategy/cmake-build-debug/CMakeFiles/cryptocurrency_strategy.dir
